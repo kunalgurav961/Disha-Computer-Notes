@@ -88,13 +88,16 @@ Line charts are useful when data is ordered by time or sequence.
 months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun")
 profit <- c(2000, 2500, 2800, 3200, 3600, 4100)
 
-plot(months, profit,
+plot(1:length(months), profit,
      type = "o",
      main = "Monthly Profit",
      xlab = "Month",
      ylab = "Profit (in INR)",
      col = "darkgreen",
-     lwd = 2)
+     lwd = 2,
+     xaxt = "n")
+
+axis(1, at = 1:length(months), labels = months)
 ```
 
 ### Explanation
